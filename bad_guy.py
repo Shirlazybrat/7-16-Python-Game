@@ -5,7 +5,7 @@ class Bad_guy(object):
 		self.screen = screen # give the bad_guy the ability to control the screen
 
 		#load teh bad_guy image, get it's rect
-		self.image = pygame.image.load('images/ball.gif')
+		self.image = pygame.image.load('images/witch.gif')
 		self.rect = self.image.get_rect() #pygame gives us get_rect on an y object se we
 		self.screen_rect = screen.get_rect() #assign a var so the bad_guy class know how big
 
@@ -17,7 +17,7 @@ class Bad_guy(object):
 		self.moving_right = False
 		self.moving_left = False
 		self.moving_up = False
-		self.moving_down = False
+		self.moving_down = True
 
 	#add update to the bad_guy class to keep all the updates in the bad_guy class
 	def update(self):
@@ -25,11 +25,7 @@ class Bad_guy(object):
 			self.rect.centerx += 10 #move the ebad_guy up
 		elif self.moving_down and self.rect.down < self.screen_rect.down:
 			self.rect.centerx -= 10 #move the bad_guy down
-		elif self.moving_right and self.rect.right < self.screen_rect.right:
-			self.rect.centerx += 10 #move the bad_guy right
-		elif self.moving_left and self.rect.left > self.screen_rect.left:
-			self.rect.centerx -= 10 #move the bad_guy left
-
+		
 
 
 	def draw_me(self):
