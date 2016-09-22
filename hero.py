@@ -2,7 +2,7 @@ import pygame
 
 class Hero(object):
 	def __init__(self, screen):
-		self.screen = screen # gice the hero the ability to control the screen
+		self.screen = screen # give the hero the ability to control the screen
 
 		#load teh hero image, get it's rect
 		self.image = pygame.image.load('images/ball.gif')
@@ -13,12 +13,20 @@ class Hero(object):
 		self.rect.bottom = self.screen_rect.bottom #this will put our hero bottom at the bottom of the screen
 		# not self.rect.sentery because we want the bottom on the bottom
 
-	#setup movement booleans
-	self.moving_right = False
-	self.moving_left = False
-	self.moving_up = False
-	self.moving_down = False
+		#setup movement booleans
+		self.moving_right = False
+		self.moving_left = False
+		self.moving_up = False
+		self.moving_down = False
+
+	#add update to the hero class to keep all the updates in the hero class
+	def update(self):
+		if self.moving_right and self.rect.right < self.screen_rect.right:
+			self.rect.centerx += 10 #move the hero right
+		elif self.moving_left and self.rect.left < self.screen_rect.left:
+			self.rect.centerx -= 10 #move th ehero left
 
 
-def draw_me(self):
-	self.screen.blit(source = self.image, dest = self.rect) #draw the surface...(the image, the where)
+
+	def draw_me(self):
+		self.screen.blit(source = self.image, dest = self.rect) #draw the surface...(the image, the where)
