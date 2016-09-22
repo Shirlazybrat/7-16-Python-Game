@@ -4,7 +4,7 @@ class Hero(object):
 	def __init__(self, screen):
 		self.screen = screen # give the hero the ability to control the screen
 
-		#load teh hero image, get it's rect
+		#load the hero image, get it's rect
 		self.image = pygame.image.load('images/ball.gif')
 		self.rect = self.image.get_rect() #pygame gives us get_rect on an y object se we
 		self.screen_rect = screen.get_rect() #assign a var so the hero class know how big
@@ -23,7 +23,7 @@ class Hero(object):
 	def update(self):
 		if self.moving_right and self.rect.right < self.screen_rect.right:
 			self.rect.centerx += 10 #move the hero right
-		elif self.moving_left and self.rect.left < self.screen_rect.left:
+		elif self.moving_left and self.rect.left > self.screen_rect.left:
 			self.rect.centerx -= 10 #move th ehero left
 
 
