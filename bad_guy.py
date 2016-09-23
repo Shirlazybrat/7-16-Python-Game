@@ -17,7 +17,7 @@ class Bad_guy(object):
 		self.moving_right = False
 		self.moving_left = False
 		self.moving_up = False
-		self.moving_down = True
+		self.moving_down = False
 
 	#add update to the bad_guy class to keep all the updates in the bad_guy class
 	def update(self):

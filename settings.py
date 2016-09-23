@@ -7,3 +7,5 @@ class Settings():
 		self.bullet_width = 3
 		self.bullet_height = 10
 		self.bullet_color = 0,0,0
+		#init the game as not active
+		self.game_active = False
